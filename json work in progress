@@ -1,75 +1,114 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "USA - Gun Violence Deaths per 1000 People (2014-2022)",
+    "text": "USA - Mass Shooting Events (1960-2022)",
     "font": "Helvetica Neue",
     "fontSize": 20
   },
+  "data": {"url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/test.csv"},
   "vconcat": [
-  {
-  "width": 800,
-  "height": 400,
-  "projection": {"type": "albersUsa"},
-  "layer": [
     {
-  "data": {
-    "url": "https://raw.githubusercontent.com/ltormonash/3179/main/states-10m.json",
-    "format": {"type": "topojson", "feature": "states"}
-  },
-  "transform": [
-    {
-      "lookup": "properties.name",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/ownership.csv"
+      "width": 800,
+      "height": 400,
+      "projection": {"type": "albersUsa"},
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/ltormonash/3179/main/states-10m.json",
+            "format": {"type": "topojson", "feature": "states"}
+          },
+          "transform": [
+            {
+              "lookup": "properties.name",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/ownership.csv"
+                },
+                "key": "State",
+                "fields": ["HFR"]
+              }
+            },
+            {"calculate": "datum.HFR", "as": "Firearm Ownership Percentage"}
+          ],
+          "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 1},
+          "encoding": {
+            "color": {
+              "field": "Firearm Ownership Percentage",
+              "type": "quantitative",
+              "scale": {"domainMax": 0.7, "range": ["white", "#A9A9A9"]}
+            },
+            "tooltip": [
+              {"field": "properties.name", "type": "nominal", "title": "State"},
+              {"field": "Firearm Ownership Percentage", "type": "quantitative"}
+            ]
+          }
         },
-        "key": "State",
-        "fields": ["HFR"]
-      }
+        {
+          "transform": [{"filter":{"param": "time_brush"}}],
+          "encoding": {
+            "longitude": {"field": "Longitude", "type": "quantitative"},
+            "latitude": {"field": "Latitude", "type": "quantitative"},
+            "tooltip": [{"field":"Date", "type": "temporal"}, {"field": "Location", "type": "nominal"}, {"field": "Number Killed", "type": "quantitative"}, {"field": "Number Injured", "type": "quantitative"}],
+            "size": {
+              "field": "Number Killed",
+              "type": "quantitative",
+              "title": "Number Kiled"
+            }       
+          },
+          "layer": [
+            { "mark": {"type": "circle", "color": "red", "opacity": 0.4}},
+          {
+            "transform": [
+              {
+                "window":[{"op":"rank","as":"ranking"}],
+                "sort":[{"field":"Number Killed","order":"descending"}]
+                },
+          {"filter": "datum.ranking == 1"},
+          {
+            "calculate": "'The worst shooting of; the selected period: ' + datum['Number Killed']", "as": "text_annotation_raw"
+            },
+          {
+            "calculate": "split(datum.text_annotation_raw,';')", "as": "text_annotation"
+            }
+      ],
+    "mark": {
+      "type": "text",
+      "align": "right",
+      "dx": -8,
+      "dy": -8,
+      "baseline": "middle",
+      "fontStyle": "italic",
+      "fontSize": 2
+    },
+    "encoding": {"text": {"field": "text_annotation"}}
+    }
+          ]
+        }
+      ]
     },
     {
-      "calculate": "datum.HFR",
-      "as": "Firearm Ownership Percentage"
+      "width": 800,
+      "height": 80,
+      "mark": "line",
+      "title": "Filter",
+      "params": [
+        {
+          "name": "time_brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "timeUnit": "year",
+          "axis": {"title": "", "format": "%Y"}
+        },
+        "y": {
+          "aggregate": "count",
+          "axis": {"tickCount": 3, "grid": true},
+          "title": "No. Incidents"
+        }
+      }
     }
-  ],
-  "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 1},
-  "encoding": {
-    "color": {
-      "field": "Firearm Ownership Percentage",
-      "type": "quantitative",
-      "scale": {"domainMax": 0.7, "range": ["white", "#A9A9A9"]}
-    },
-    "tooltip": [
-      {"field": "properties.name", "type": "nominal", "title": "State"},
-      {"field": "Firearm Ownership Percentage", "type": "quantitative"}
-    ]
-  }
-    },
-    {"data": {"url":"https://raw.githubusercontent.com/ltormonash/3179Assignment/main/Lat%20Long%20Mass%20Shootings%20Load.csv"},
-    "mark":{"type": "circle", "tooltip": {"content": "data"}},
-    "encoding": {
-      "longitude":{"field": "Longitude", "type": "quantitative"},
-      "latitude": {"field": "Latitude", "type": "quantitative"},
-      "size": {
-        "field": "Number Killed",
-        "type": "quantitative",
-        "title": "Number Kiled"
-      }}}]
-},
-{"width": 800,
-"height": 50,
-"data": {"url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/Lat%20Long%20Mass%20Shootings%20Load.csv"},
-"mark": "line",
-"title": "Filter",
-"params": [{"name": "time_brush",
-"select": {"type": "interval", "encodings": ["x"]}
-}],
-"encoding": {
-  "x": {
-    "field": "Date",
-    "timeUnit": "year",
-    "axis": {"title": "", "format": "%Y"}
-  },
-  "y": {"aggregate": "count", "axis": {"tickCount": 3, "grid": true}, "title": "Count"}
-}}
-  ]}
+  ]
+}
