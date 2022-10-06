@@ -5,8 +5,10 @@
     "font": "Helvetica Neue",
     "fontSize": 20
   },
+  "vconcat": [
+  {
   "width": 800,
-  "height": 450,
+  "height": 400,
   "projection": {"type": "albersUsa"},
   "layer": [
     {
@@ -46,11 +48,28 @@
     {"data": {"url":"https://raw.githubusercontent.com/ltormonash/3179Assignment/main/Lat%20Long%20Mass%20Shootings%20Load.csv"},
     "mark":{"type": "circle", "tooltip": {"content": "data"}},
     "encoding": {
-      "longitude":{"field": "longitude", "type": "quantitative"},
-      "latitude": {"field": "latitude", "type": "quantitative"},
+      "longitude":{"field": "Longitude", "type": "quantitative"},
+      "latitude": {"field": "Latitude", "type": "quantitative"},
       "size": {
         "field": "Number Killed",
         "type": "quantitative",
         "title": "Number Kiled"
       }}}]
-}
+},
+{"width": 800,
+"height": 50,
+"data": {"url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/Lat%20Long%20Mass%20Shootings%20Load.csv"},
+"mark": "line",
+"title": "Filter",
+"params": [{"name": "time_brush",
+"select": {"type": "interval", "encodings": ["x"]}
+}],
+"encoding": {
+  "x": {
+    "field": "Date",
+    "timeUnit": "year",
+    "axis": {"title": "", "format": "%Y"}
+  },
+  "y": {"aggregate": "count", "axis": {"tickCount": 3, "grid": true}, "title": "Count"}
+}}
+  ]}
