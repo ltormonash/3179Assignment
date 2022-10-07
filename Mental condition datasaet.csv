@@ -1,7 +1,7 @@
-﻿Amount,Condition
-150,Bipolar
-121,Increased Agitation
-79,Abusive Behavior
-73,Isolation
-105,Paranoia
-25,None
+﻿Amount,Percentage,Condition
+150,27%,Bipolarism (Rapid Mood Swings)
+121,22%,Increased Agitation
+79,14%,Abusive Behavior
+73,13%,Isolation
+105,19%,Paranoia
+25,5%,None
