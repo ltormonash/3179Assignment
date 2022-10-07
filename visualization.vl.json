@@ -55,24 +55,26 @@
               {"field": "Location", "type": "nominal"},
               {"field": "Number Killed", "type": "quantitative"},
               {"field": "Number Injured", "type": "quantitative"}
-            ],
-            "size": {
+            ]
+          },
+          "layer": [
+            {"mark": {"type": "circle", "color": "red", "opacity": 0.4}, "encoding":{
+                          "size": {
               "field": "Number Killed",
               "type": "quantitative",
               "title": "Number Kiled"
             }
-          },
-          "layer": [
-            {"mark": {"type": "circle", "color": "red", "opacity": 0.4}},
+            }},
             {
               "transform": [
-                {
-                  "window": [{"op": "rank", "as": "ranking"}],
-                  "sort": [{"field": "Number Killed", "order": "descending"}]
-                },
+                {"calculate": "datum['Number Killed']*1", "as": "kills"},
+{
+  "window": [{"op": "rank", "as": "ranking"}],
+  "sort": [{"field": "kills", "order": "descending"}]
+},
                 {"filter": "datum.ranking == 1"},
                 {
-                  "calculate": "'The worst shooting of; the selected period: ' + datum['Number Killed']",
+                  "calculate": "'The worst shooting of; the selected period: ' + datum['Number Killed'] + ' deaths'",
                   "as": "text_annotation_raw"
                 },
                 {
@@ -82,12 +84,12 @@
               ],
               "mark": {
                 "type": "text",
-                "align": "right",
-                "dx": -8,
+                "align": "left",
+                "dx": 20,
                 "dy": -8,
                 "baseline": "middle",
-                "fontStyle": "italic",
-                "fontSize": 2
+                "fontStyle": "bold",
+                "fontSize": 12
               },
               "encoding": {"text": {"field": "text_annotation"}}
             }
