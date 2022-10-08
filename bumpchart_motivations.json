@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 800,
+  "width": 400,
+  "title": {"text": "Motivation of Shooting Rankings", "frame": "bounds"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/Motivation.csv"
+  },
+  "transform": [
+    {
+      "sort": [{"field": "Count", "order": "ascending"}],
+      "window": [{"op": "rank", "as": "rank"}],
+      "groupby": ["Date"]
+    }
+  ],
+  "mark": {"type": "line", "orient": "vertical"},
+  "encoding": {
+    "x": {"field": "Date", "type": "ordinal"},
+    "y": {"field": "rank", "type": "ordinal"},
+    "color": {
+      "field": "Motivation",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Hate", "Fame", "Psychosis", "Relationship Issues"],
+        "range": ["red", "676767", "676767", "676767"]
+      }
+    }
+  },
+  "config": {}
+}
