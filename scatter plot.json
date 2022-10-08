@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Ownership vs Mortality",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/gun_violence.csv"
+  },
+  "height": 400,
+  "width": 400,
+  "title": "Mortality Rate (Gun Related Deaths per 100,000 people) vs Ownership Rate (Guns per 100 people)",
+  "layer": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {"field": "ownership_rate", "type": "quantitative"},
+        "y": {"field": "mortality_rate", "type": "quantitative"},
+        "color": {
+          "condition": {
+            "test": "datum.country == 'United States'",
+            "value": "red"
+          },
+          "value": "grey"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/filtered%20gun%20ownership.csv"
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dx": 0,
+        "dy": -10,
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {"field": "ownership_rate", "type": "quantitative"},
+        "y": {"field": "mortality_rate", "type": "quantitative"},
+        "text": {"field": "country"}
+      }
+    }
+  ],
+  "config": {}
+}
