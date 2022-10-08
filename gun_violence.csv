@@ -1,0 +1,42 @@
+country,mortality_rate,ownership_rate,hdi,hdi_category
+United States,9,88.8,0.91,very high
+Switzerland,3.5,45.7,0.903,very high
+Cyprus,0.83,36.4,0.84,very high
+Finland,3.64,32,0.882,very high
+Sweden,1.47,31.6,0.904,very high
+Norway,1.78,31.3,0.943,very high
+France,3,31.2,0.884,very high
+Canada,4.78,30.8,0.908,very high
+Austria,2.94,30.4,0.885,very high
+Germany,1.1,30.3,0.905,very high
+Iceland,1.25,30.3,0.898,very high
+New Zealand,2.66,22.6,0.908,very high
+Greece,1.5,22.5,0.861,very high
+Croatia,3.01,21.7,0.796,very high
+Qatar,0.18,19.2,0.831,very high
+Latvia,1.43,19,0.805,very high
+Belgium,2.43,17.2,0.886,very high
+Czech Republic,1.76,16.3,0.865,very high
+Luxembourg,1.81,15.3,0.867,very high
+Australia,1.05,15,0.929,very high
+Slovenia,2.44,13.5,0.884,very high
+Denmark,1.45,12,0.895,very high
+Italy,1.28,11.9,0.874,very high
+Malta,2.16,11.9,0.832,very high
+Chile,0.06,10.7,0.805,very high
+Spain,0.63,10.4,0.878,very high
+Argentina,5.65,10.2,0.797,very high
+Estonia,2.54,9.2,0.835,very high
+Ireland,1.03,8.6,0.908,very high
+Portugal,1.77,8.5,0.809,very high
+Slovakia,1.75,8.3,0.834,very high
+Barbados,3,7.8,0.793,very high
+Israel,1.86,7.3,0.888,very high
+United Kingdom,0.25,6.2,0.863,very high
+Hungary,0.85,5.5,0.816,very high
+Netherlands,0.46,3.9,0.91,very high
+Poland,0.26,1.3,0.813,very high
+South Korea,0.13,1.1,0.897,very high
+Lithuania,1.61,0.7,0.81,very high
+Japan,0.07,0.6,0.901,very high
+Singapore,0.24,0.5,0.866,very high
