@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Crime Rates World Wide",
+  "title": "Crime Index of Developed Countries",
+  "hconcat": [
+    {
+      "height": 350,
+      "width": 400,
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/crime%20rate.csv"
+          },
+          "layer": [
+            {
+              "mark": "bar",
+              "encoding": {
+                "x": {
+                  "field": "Country",
+                  "type": "nominal",
+                  "axis": {"labelAngle": 270},
+                  "sort": "-y"
+                },
+                "y": {"field": "Crime Index", "type": "quantitative"},
+                "color": {"value": "black"}
+              }
+            },
+            {
+              "mark": "bar",
+              "encoding": {
+                "x": {"field": "Country", "type": "nominal", "sort": "-y"},
+                "y": {"field": "Crime Index", "type": "quantitative"},
+                "color": {
+                  "condition": {
+                    "test": "datum['Country'] == 'United States'",
+                    "value": "red"
+                  },
+                  "value": "grey"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "data": {"values": [{}]},
+          "encoding": {"y": {"datum": 45.275}},
+          "layer": [
+            {"mark": "rule"},
+            {
+              "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "bottom",
+                "dx": -2,
+                "dy": -2,
+                "x": "width",
+                "text": "World Wide Average"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/gun_violence.csv"
+      },
+      "height": 400,
+      "width": 400,
+      "title": "Mortality Rate (Gun Related Deaths per 100,000 people) vs Ownership Rate (Guns per 100 people)",
+      "layer": [
+        {
+          "mark": "point",
+          "encoding": {
+            "x": {"field": "ownership_rate", "type": "quantitative"},
+            "y": {"field": "mortality_rate", "type": "quantitative"},
+            "color": {
+              "condition": {
+                "test": "datum.country == 'United States'",
+                "value": "red"
+              },
+              "value": "grey"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/filtered%20gun%20ownership.csv"
+          },
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "dx": 0,
+            "dy": -10,
+            "baseline": "middle"
+          },
+          "encoding": {
+            "x": {"field": "ownership_rate", "type": "quantitative"},
+            "y": {"field": "mortality_rate", "type": "quantitative"},
+            "text": {"field": "country"}
+          }
+        }
+      ],
+      "config": {}
+    }
+  ],
+  "config": {}
+}
