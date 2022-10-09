@@ -1,0 +1,51 @@
+﻿Date,Purchase Type,Weapon Type,Count
+1900,Illegal,Handgun,1
+1900,Legal,Handgun,0
+1960,Illegal,Handgun,1
+1960,Legal,Handgun,5
+1960,Illegal,Rifle,3
+1960,Legal,Rifle,3
+1960,Illegal,Shotgun,0
+1960,Legal,Shotgun,1
+1970,Illegal,Assault weapon,2
+1970,Legal,Assault weapon,0
+1970,Illegal,Handgun,4
+1970,Legal,Handgun,0
+1970,Illegal,Rifle,3
+1970,Legal,Rifle,6
+1980,Illegal,Assault weapon,4
+1980,Legal,Assault weapon,5
+1980,Illegal,Handgun,15
+1980,Legal,Handgun,15
+1980,Illegal,Rifle,5
+1980,Legal,Rifle,2
+1980,Illegal,Shotgun,2
+1980,Legal,Shotgun,5
+1990,Illegal,Assault weapon,9
+1990,Legal,Assault weapon,3
+1990,Illegal,Handgun,26
+1990,Legal,Handgun,20
+1990,Illegal,Rifle,7
+1990,Legal,Rifle,3
+1990,Illegal,Shotgun,5
+1990,Legal,Shotgun,5
+2000,Illegal,Assault weapon,8
+2000,Legal,Assault weapon,2
+2000,Illegal,Handgun,33
+2000,Legal,Handgun,18
+2000,Illegal,Rifle,2
+2000,Legal,Rifle,6
+2000,Illegal,Shotgun,4
+2000,Legal,Shotgun,7
+2010,Illegal,Assault weapon,13
+2010,Legal,Assault weapon,31
+2010,Illegal,Handgun,30
+2010,Legal,Handgun,42
+2010,Illegal,Rifle,5
+2010,Legal,Rifle,1
+2010,Illegal,Shotgun,7
+2010,Legal,Shotgun,7
+2020,Illegal,Assault weapon,0
+2020,Legal,Assault weapon,5
+2020,Illegal,Handgun,3
+2020,Legal,Handgun,7
