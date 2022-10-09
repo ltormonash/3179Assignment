@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/type%20of%20gun%20and%20purchase%20type.csv"
+  },
+  "params": [
+    {
+      "name": "decade_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "1960",
+          "1970",
+          "1980",
+          "1990",
+          "2000",
+          "2010",
+          "2020"
+        ],
+        "labels": [
+          "Show All",
+          "1960",
+          "1970",
+          "1980",
+          "1990",
+          "2000",
+          "2010",
+          "2020"
+        ],
+        "name": "Decade Selection: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "mark": "bar",
+      "transform": [
+        {
+          "filter": "decade_selection == null || datum.Date == decade_selection"
+        },
+        {"calculate": "datum['Count']*1", "as": "number"}
+      ],
+      "encoding": {
+        "y": {"aggregate": "sum", "field": "number", "title": "Number of uses"},
+        "x": {"field": "Weapon Type"},
+        "color": {
+          "field": "Purchase Type",
+          "scale": {"domain": ["Illegal", "Legal"], "range": ["red", "grey"]}
+        }
+      }
+    }
+  ],
+  "config": {}
+}
