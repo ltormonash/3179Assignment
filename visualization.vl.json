@@ -58,20 +58,23 @@
             ]
           },
           "layer": [
-            {"mark": {"type": "circle", "color": "red", "opacity": 0.4}, "encoding":{
-                          "size": {
-              "field": "Number Killed",
-              "type": "quantitative",
-              "title": "Number Kiled"
-            }
-            }},
+            {
+              "mark": {"type": "circle", "color": "red", "opacity": 0.8},
+              "encoding": {
+                "size": {
+                  "field": "Number Killed",
+                  "type": "quantitative",
+                  "title": "Number Kiled"
+                }
+              }
+            },
             {
               "transform": [
                 {"calculate": "datum['Number Killed']*1", "as": "kills"},
-{
-  "window": [{"op": "rank", "as": "ranking"}],
-  "sort": [{"field": "kills", "order": "descending"}]
-},
+                {
+                  "window": [{"op": "rank", "as": "ranking"}],
+                  "sort": [{"field": "kills", "order": "descending"}]
+                },
                 {"filter": "datum.ranking == 1"},
                 {
                   "calculate": "'The worst shooting of; the selected period: ' + datum['Number Killed'] + ' deaths'",
@@ -82,18 +85,37 @@
                   "as": "text_annotation"
                 }
               ],
-              "mark": {
-                "type": "text",
-                "align": "left",
-                "dx": 20,
-                "dy": -8,
-                "baseline": "middle",
-                "fontStyle": "bold",
-                "fontSize": 12
-              },
-              "encoding": {"text": {"field": "text_annotation"}}
+              "layer": [
+                {
+                  "mark": {
+                    "type": "point",
+                    "size": 400,
+                    "shape": "M0,.5L.6,.8L.5,.1L1,-.3L.3,-.4L0,-1L-.3,-.4L-1,-.3L-.5,.1L-.6,.8L0,.5Z"
+                  },
+                  "encoding": {
+                    "color": {
+                      "field": "kills",
+                      "type": "quantitative",
+                      "legend": null
+                    }
+                  }
+                },
+                {
+                  "mark": {
+                    "type": "text",
+                    "align": "left",
+                    "dx": 20,
+                    "dy": -8,
+                    "baseline": "middle",
+                    "fontStyle": "bold",
+                    "fontSize": 12
+                  },
+                  "encoding": {"text": {"field": "text_annotation"}}
+                }
+              ]
             }
-          ]
+          ],
+          "resolve": {"scale": {"color": "independent"}}
         }
       ]
     },
