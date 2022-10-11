@@ -1,10 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "USA - Mass Shooting Events (1960-2022)",
-    "font": "Helvetica Neue",
-    "fontSize": 20
-  },
   "data": {
     "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/test.csv"
   },
