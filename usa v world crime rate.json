@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Crime Rates World Wide",
-  "height": 350,
+  "height": 400,
   "width": 400,
   "layer": [
     {
