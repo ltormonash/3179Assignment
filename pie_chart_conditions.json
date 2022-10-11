@@ -1,8 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": {"text": "Signs of Crisis", "dy": -12},
-  "description": "A scone pie chart with labels.",
-  "background": "#F6F6F6",
   "padding": {"top": 24, "right": 24, "bottom": 24, "left": 24},
   "data": {
     "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/Mental%20condition%20datasaet.csv"
