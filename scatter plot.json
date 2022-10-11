@@ -1,12 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Ownership vs Mortality",
+  "description": "Crime Rates World Wide",
   "data": {
     "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/gun_violence.csv"
   },
   "height": 400,
   "width": 400,
-  "title": "Mortality Rate (Gun Related Deaths per 100,000 people) vs Ownership Rate (Guns per 100 people)",
   "layer": [
     {
       "mark": "point",
