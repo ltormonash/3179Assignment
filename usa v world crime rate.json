@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Crime Rates World Wide",
+  "height": 350,
+  "width": 400,
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/crime%20rate.csv"
+      },
+      "layer": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {
+              "field": "Country",
+              "type": "nominal",
+              "axis": {"labelAngle": 270},
+              "sort": "-y"
+            },
+            "y": {"field": "Crime Index", "type": "quantitative"},
+            "color": {"value": "black"}
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {"field": "Country", "type": "nominal", "sort": "-y"},
+            "y": {"field": "Crime Index", "type": "quantitative"},
+            "color": {
+              "condition": {
+                "test": "datum['Country'] == 'United States'",
+                "value": "red"
+              },
+              "value": "grey"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "data": {"values": [{}]},
+      "encoding": {"y": {"datum": 45.275}},
+      "layer": [
+        {"mark": "rule"},
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "dx": -2,
+            "dy": -2,
+            "x": "width",
+            "text": "World Wide Average"
+          }
+        }
+      ]
+    }
+  ],
+  "config": {}
+}
