@@ -21,12 +21,11 @@
         "range": ["red", "676767", "676767", "676767"],
       }, "legend": null
     }
-  },
-  "config": {}
+  }
 },
  {"mark": {"type": "text", "align": "left", "dx": 5},
  "encoding":{
-   "text": {"condition": {"test": "datum['Date'] != 2020"}, "field": "Motivation", "type": "nominal"}
+   "text": {"condition": {"test": "datum['Date'] != 2020", "value": ""}, "field": "Motivation", "type": "nominal"}
  }}
 ]
 }
