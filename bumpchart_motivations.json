@@ -18,7 +18,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["Fame", "Hate", "Psychosis", "Relationship Issues"],
-        "range": ["red", "676767", "676767", "676767"],
+        "range": ["red", "676767", "676767", "676767"]
       }, "legend": null
     }
   }
