@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
   <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/ltormonash/3179Assignment/main/styles.css" media="all">
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
 
 
 </head>
@@ -28,51 +28,165 @@
 
   <div class="page">
 
-    <!-- pure grid group -->
+    <!-- HEADING -->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <h1>USA GUN VIOLENCE</h1>
-        <p>An analysis of the tragic mass shootings.</p>
+        <div id = "headingborder">
+          <div class="mainheading">
+        <h1 id="c-align"> THE <span class="guntext">GUN</span> EPIDEMIC </h1> </div>
+        <div class="titlesubheading">
+        <p id="c-align"> America's <span class="guntext">Deadly</span> Gun Problem </p> </div> </div>
       </div>
     </div>
-    <!-- end pure grid group -->
 
-    <!-- pure grid group -->
+    <!-- WORLDWIDE subheading -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+          <div class="subheading">
+        <h2 id="c-align"> WORLDWIDE </h2>
+        <div class="titlesubheading">
+    </div>
+
+    <!-- Crime + Mortality v Ownership -->
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <div id="vis1" class="vis-container"></div>
-
-          <p>Here we can see that although states such as California, Florida and Texas have proportionately low firearm ownership percentages,
-            significant proportion of mass shootings occur here. </p>
-            <h2>Mental Conditions of Shooters</h2>
+        <div class="graphheadings">
+          <h3 id="c-align"> Crime Index </h3>
         </div>
+        <div id="crimebarchart" class="vis-container"></div>
       </div>
       <div class="pure-u-1-2">
-        <div id="vis2" class="vis-container"></div>
-        <p> Only a very small proportion of shooters were not predisposed to a clinical mental condition. </p>
+        <div class="graphheadings">
+          <h3 id="c-align"> Mortality v Ownership </h3>
+        </div>
+        <div id="scatterplot" class="vis-container"></div>
+      </div>
+      </div>
+
+    <!-- UNITED STATES subheading -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+          <div class="subheading">
+        <h2 id="c-align"> UNITED STATES </h2>
+        <div class="titlesubheading">
+    </div>
+
+    <!-- Interactive Map -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="graphheadings">
+          <h3 id="c-align"> Mass Shooting Events (1960-2022) </h3>
+        </div>
+        <div id="map" class="vis-container"></div>
       </div>
     </div>
-    <!-- end pure grid group -->
+
+    <!-- FIREARM ACCESSIBILITY subheading -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+          <div class="subheading">
+        <h2 id="c-align"> FIREARM ACCESSIBILITY </h2>
+        <div class="titlesubheading">
+    </div>
+
+        <!-- Gun purchase stacked bar chart -->
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <div class="graphheadings">
+              <h3 id="c-align"> Type of Firearm v Legality of Purchase </h3>
+            </div>
+            <div id="stackedbargunpurchase" class="vis-container"></div>
+          </div>
+          <div class="pure-u-1-2">
+            <p>Handguns are the most accessible weapon,
+              and hence are the firearm of choice. A significant proportion is 
+            illegaly sourced, especially through 1970-2000. This suggests that 
+            USA has a black market problem for these firearms.   </p>
+          </div>
+        </div>
+
+    <!-- BACKGROUND ANALYSIS subheading -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+          <div class="subheading">
+        <h2 id="c-align"> BACKGROUND ANALYSIS </h2>
+        <div class="titlesubheading">
+    </div>
+
+     <!-- Isotype Map -->
+     <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="graphheadings">
+          <h3 id="c-align"> <span class="isotypered">32% of Shooters were known to Police or FBI</span> as being
+            threats to the safety of the community before their violent act.
+          </h3>
+        </div>
+        <div id="isotype" class="vis-container"></div>
+      </div>
+    </div>   
+
+    <!-- Concat Visualisation subheading -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="graphheadings">
+          <h3 id="c-align"> Motivation of Shooters Ranking </h3>
+        </div>
+        <div id="bumpchartmotivations" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="graphheadings">
+          <h3 id="c-align"> Existing Conditions </h3>
+        </div>
+        <div id="piechartconditions" class="vis-container"></div>
+      </div>
+      </div>
+      
+      <!-- Background explanations -->
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div id="pad">
+          <p id="c-align"> Only a small proportion of shooters did not have an existing mental condition. 
+            As such, they are highly unstable, and have become increasingly fueled by hate. </p>
+          </div>
+      </div>
 
   </div> <!-- end page -->
 
   <script type="text/javascript">
-    var specVis1 = "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/visualization.vl.json";
-    var specVis2 = "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/pie_chart_conditions.json";
+    var specVis1 = "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/usa%20v%20world%20crime%20rate.json";
+    var specVis2 = "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/visualization.vl.json";
+    var specVis3 = "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/stacked%20bar%20chart%20gun%20type%20and%20purchase%20type.json";
+    var specVis4 = "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/bumpchart_motivations.json";
+    var specVis5 = "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/pie_chart_conditions.json";
+    var specVis6 = "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/police%20history%20isotype.json";
+    var specVis7 = "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/scatter%20plot.json";
 
-    vegaEmbed('#vis1', specVis1, { "actions": false });
+    vegaEmbed('#crimebarchart', specVis1, { "actions": false });
 
-    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+    vegaEmbed('#map', specVis2, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    vegaEmbed('#vis3', specVis1, { "actions": false }).then(function (result) {
+    vegaEmbed('#stackedbargunpurchase', specVis3, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    vegaEmbed('#vis4', specVis2, { "actions": false }).then(function (result) {
+    vegaEmbed('#bumpchartmotivations', specVis4, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
+
+    vegaEmbed('#piechartconditions', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#isotype', specVis6, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#scatterplot', specVis7, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
   </script>
 </body>
 
