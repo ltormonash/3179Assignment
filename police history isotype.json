@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {"view": {"stroke": ""}},
-  "width": 400,
-  "height": 400,
+  "width": 800,
+  "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/isotype%20graph%20data.csv"
   },
@@ -25,6 +25,6 @@
       },
       "legend": null
     },
-    "size": {"value": 90}
+    "size": {"value": 220}
   }
 }
