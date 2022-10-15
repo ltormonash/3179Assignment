@@ -36,7 +36,7 @@
   ],
   "layer": [
     {
-      "mark": "bar",
+      "mark": {"type":"bar", "tooltip":true},
       "transform": [
         {
           "filter": "decade_selection == null || datum.Date == decade_selection"
