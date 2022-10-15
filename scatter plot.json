@@ -35,7 +35,7 @@
         "dy": -10,
         "baseline": "middle",
         "fontStyle": "bold",
-        "fontSize": 14,
+        "fontSize": 14
       },
       "encoding": {
         "x": {"field": "ownership_rate", "type": "quantitative"},
