@@ -6,13 +6,13 @@
     "url": "https://raw.githubusercontent.com/ltormonash/3179Assignment/main/Motivation.csv"
   },
     "encoding": {
-    "x": {"field": "Date", "type": "ordinal"},
-    "y": {"field": "Rank", "type": "ordinal"}},
+    "x": {"field": "Date", "type": "ordinal","axis": {"labelFont": "Lucida Sans"}},
+    "y": {"field": "Rank", "type": "ordinal","axis": {"labelFont": "Lucida Sans"}}},
   "layer": [{
   "mark": {"type": "line", "orient": "vertical", "tooltip": true},
   "encoding": {
-    "x": {"field": "Date", "type": "ordinal"},
-    "y": {"field": "Rank", "type": "ordinal"},
+    "x": {"field": "Date", "type": "ordinal","axis": {"labelFont": "Lucida Sans"}},
+    "y": {"field": "Rank", "type": "ordinal","axis": {"labelFont": "Lucida Sans"}},
     "color": {
       "field": "Motivation",
       "type": "nominal",
@@ -23,9 +23,9 @@
     }
   }
 },
- {"mark": {"type": "text", "align": "left", "dx": 5, "tooltip": true},
+ {"mark": {"type": "text", "align": "left", "dx": 5, "tooltip": true, "font": "Lucida Sans"},
  "encoding":{
-   "text": {"condition": {"test": "datum['Date'] != 2020", "value": ""}, "field": "Motivation", "type": "nominal"}
+   "text": {"condition": {"test": "datum['Date'] != 2020", "value": ""}, "field": "Motivation", "type": "nominal"}, "color": {"value": "black"}
  }}
 ],"config": {
   "view": {
