@@ -44,8 +44,8 @@
         {"calculate": "datum['Count']*1", "as": "number"}
       ],
       "encoding": {
-        "y": {"aggregate": "sum", "field": "number", "title": "Number of uses"},
-        "x": {"field": "Weapon Type"},
+        "y": {"aggregate": "sum", "field": "number", "title": "Number of uses","axis": {"labelFont": "Lucida Sans"}},
+        "x": {"field": "Weapon Type","axis": {"labelFont": "Lucida Sans"}},
         "color": {
           "field": "Purchase Type",
           "scale": {"domain": ["Illegal", "Legal"], "range": ["red", "grey"]}
