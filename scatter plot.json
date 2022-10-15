@@ -51,7 +51,7 @@
       }
     },
     {
-      "mark": {"type":"text", "dx": 200, "dy": -170, "fontSize": 13},
+      "mark": {"type":"text", "dx": 200, "dy": -170, "fontSize": 13, "font": "Lucida Sans"},
       "transform": [
         {"filter": "datum.country == 'United States'"},
         {
