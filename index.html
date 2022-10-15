@@ -28,14 +28,21 @@
 
   <div class="page">
 
+    
     <!-- HEADING -->
     <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div id = "headingborder">
-          <div class="mainheading">
-        <h1 id="c-align"> THE <span class="guntext">GUN</span> EPIDEMIC </h1> </div>
-        <div class="titlesubheading">
-        <p id="c-align"> America's <span class="guntext">Deadly</span> Gun Problem </p> </div> </div>
+      <div class="pure-u-1-5">
+        <img src="flagbullethole.png" class="imgtitle">
+      </div>
+      <div class="pure-u-3-5">
+        <div class="mainheading">
+        <h1> THE <span class="guntext">GUN</span> EPIDEMIC</h1>
+      </div>
+      <div class="titlesubheading">
+      <h2 class="c-align"> USA's <span class="guntext">Deadly</span> Gun Problem </h2> </div>
+      </div>
+      <div class="pure-u-1-5">
+        <img src="hand holding gun.jpg" class="imgtitle">
       </div>
     </div>
 
@@ -43,89 +50,113 @@
     <div class="pure-g">
       <div class="pure-u-1-1">
           <div class="subheading">
-        <h2 id="c-align"> WORLDWIDE </h2>
-        <div class="titlesubheading">
-    </div>
+        <h2 id="c-align"> <img src="worldwide.png" style="height:1ex;"> WORLDWIDE </h2> </div> 
+        </div>
+        </div>
+            
 
     <!-- Crime + Mortality v Ownership -->
     <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div class="graphheadings">
-          <h3 id="c-align"> Crime Index </h3>
-        </div>
-        <div id="crimebarchart" class="vis-container"></div>
-      </div>
       <div class="pure-u-1-2">
         <div class="graphheadings">
           <h3 id="c-align"> Mortality v Ownership </h3>
         </div>
         <div id="scatterplot" class="vis-container"></div>
       </div>
+      <div class="pure-u-1-2">
+        <div class="graphheadings">
+          <h3 id="c-align"> Crime Index </h3>
+        </div>
+        <div id="crimebarchart" class="vis-container"></div>
+      </div>
+      </div>
+
+      <!-- Worldwide explanations --> 
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description-left">
+          <p>The trend suggests that there is a <span class="bold">strong correlation between high gun 
+            ownership rates and deaths to violent crime </span>. The <span class="red">United States is an extreme outlier </span>
+            in both regards. No other country accepts firearms to this extent. The presence of these 
+            weapons increases the potential deadliness of acts of violent crime.</p> </div>
+        </div>
+
+        <div class="pure-u-1-2">
+          <div class="description-right">
+          <p>However, <span class="red">violent crime index of the United States is comparable to other developed 
+            countries </span>. It is only slightly above the worldwide average. This means that their gun violence issues do 
+            not stem from the presence of more dangerous individuals in society, but rather the <span class="bold">accessibility</span>
+            and absurdly high acceptance of firearms. </p> </div>
+        </div>
       </div>
 
     <!-- UNITED STATES subheading -->
     <div class="pure-g">
       <div class="pure-u-1-1">
           <div class="subheading">
-        <h2 id="c-align"> UNITED STATES </h2>
-        <div class="titlesubheading">
+        <h2 id="c-align"> <img src="unitedstates.png" style="height:1ex;"> UNITED STATES </h2>
     </div>
 
     <!-- Interactive Map -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <div class="graphheadings">
-          <h3 id="c-align"> Mass Shooting Events (1960-2022) </h3>
+          <h3> Mass Shooting Events (1960-2022) </h3>
         </div>
-        <div id="map" class="vis-container"></div>
+        <div id="map" class="vis-containermap"></div>
       </div>
     </div>
+
+      <!-- Map explanations -->
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div class="description-bottom">
+          <p class="c-align"> States such as California and New York with low 
+            firearm ownership experience a large proportion of the mass shooting events.
+             Meanwhile, Northwestern states such as Montana and Wyoming have not experienced 
+             mass shootings during this period although having the highest firearm ownership percentage. 
+             A reason for this is <span class="bold">population density</span>, as well as <span class="bold">stricter regulations</span> for who can carry 
+             firearms in public. This makes it less accessible for the firearm to be used for violence. </p>
+          </div>
+      </div>
 
     <!-- FIREARM ACCESSIBILITY subheading -->
     <div class="pure-g">
       <div class="pure-u-1-1">
           <div class="subheading">
-        <h2 id="c-align"> FIREARM ACCESSIBILITY </h2>
-        <div class="titlesubheading">
+        <h2 id="c-align"> <img src="firearm.png" style="height:1ex;"> FIREARM ACCESSIBILITY </h2>
     </div>
 
-        <!-- Gun purchase stacked bar chart -->
-        <div class="pure-g">
-          <div class="pure-u-1-2">
-            <div class="graphheadings">
-              <h3 id="c-align"> Type of Firearm v Legality of Purchase </h3>
-            </div>
-            <div id="stackedbargunpurchase" class="vis-container"></div>
-          </div>
-          <div class="pure-u-1-2">
-            <p>Handguns are the most accessible weapon,
-              and hence are the firearm of choice. A significant proportion is 
-            illegaly sourced, especially through 1970-2000. This suggests that 
-            USA has a black market problem for these firearms.   </p>
-          </div>
+    <!-- Stacked bar chart Map -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="graphheadings">
+          <h3> Type of Firearm v Legality of Purchase </h3>
         </div>
+        <div id="stackedbargunpurchase" class="vis-container"></div>
+      </div>
+    </div>
+
+      <!-- Firearm accessibility explanations -->
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div class="description-bottom">
+          <p class="c-align"> <span class="bold">Handguns are the most popular weapon type in these shootings</span>. This is because of the accessibility 
+            to purchase them, as well as concealability. Overall and across all weapon types, <span class="red">near half are sourced 
+            illegally </span>. An illegal underground market is a symptom of extreme abundance of firearms (as displayed in 
+            previous graphs). When they are too prevalent in society, it is <span class="bold">too hard to control who has access to them. </span> </p>
+          </div>
+      </div>
 
     <!-- BACKGROUND ANALYSIS subheading -->
     <div class="pure-g">
       <div class="pure-u-1-1">
           <div class="subheading">
-        <h2 id="c-align"> BACKGROUND ANALYSIS </h2>
-        <div class="titlesubheading">
+        <h2 id="c-align"> <img src="background.png" style="height:1ex;"> BACKGROUND ANALYSIS </h2>
     </div>
 
-     <!-- Isotype Map -->
-     <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div class="graphheadings">
-          <h3 id="c-align"> <span class="isotypered">32% of Shooters were known to Police or FBI</span> as being
-            threats to the safety of the community before their violent act.
-          </h3>
-        </div>
-        <div id="isotype" class="vis-container"></div>
-      </div>
-    </div>   
 
-    <!-- Concat Visualisation subheading -->
+    <!-- Background analysis graphs -->
     <div class="pure-g">
       <div class="pure-u-1-2">
         <div class="graphheadings">
@@ -141,16 +172,48 @@
       </div>
       </div>
       
-      <!-- Background explanations -->
+      <!-- Worldwide explanations -->
       <div class="pure-g">
-        <div class="pure-u-1-1">
-          <div id="pad">
-          <p id="c-align"> Only a small proportion of shooters did not have an existing mental condition. 
-            With the prevalance of social media, they have become increasingly motivated by fame and publicity -
-          as opposed to relationship issues, which is on the decline.  </p>
-          </div>
+        <div class="pure-u-1-2">
+          <div class="description-left">
+          <p>The prevalence of social media in todays age provides these individuals with a platform
+           to broadcast themselves. This has seen <span class="red">fame seeking quickly become the most common motivator</span>, 
+           with factors such as relationship issues fading over time. </p> </div>
+        </div>
+
+        <div class="pure-u-1-2">
+          <div class="description-right">
+          <p>Only <span class="red">5% of shooters did not have an existing mental condition</span>. People with severe mental illnesses 
+            have an increased risk of violence compared to the general population. The <span class="bold">ease of accessing firearms 
+            in the USA makes large scale violence an option </span> for these people.  </p> </div>
+        </div>
       </div>
 
+
+     <!-- Isotype Map -->
+     <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="graphheadings">
+          <h3 id="c-align"> Criminal History </h3>
+        </div>
+        <div id="isotype" class="vis-container"></div>
+          <p class="description-isotype"><span class="red">32% of Shooters were known to Police or FBI</span> as being
+            threats to the safety of the community before their violent act. This reveals that a <span class="bold">significant proportion of 
+            mass shootings were preventable </span>, but the police force failed to reprimand the individuals efficiently. </p>
+      </div>
+    </div>  
+
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p class="c-align"> This visualisation was created by 
+          <a href="https://github.com/ltormonash/3179Assignment" target="_blank"> Luka Torlak</a>.
+        Data and information was sourced from
+          <a href="https://www.openintro.org/book/statdata/index.php?data=gun_violence" target="_blank"> Open Intro</a>, 
+          <a href="https://www.numbeo.com/crime/rankings_by_country.jsp" target="_blank"> Numbeo</a>
+        and
+          <a href="https://www.theviolenceproject.org/mass-shooter-database" target="_blank"> The Violence Project.</a></p>
+      </div>
+    </div>
   </div> <!-- end page -->
 
   <script type="text/javascript">
