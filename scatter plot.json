@@ -8,7 +8,7 @@
   "width": 400,
   "layer": [
     {
-      "mark": {"type":"point"},
+      "mark": {"type":"point", "filled": true, "size": 70},
       "encoding": {
         "x": {"field": "ownership_rate", "type": "quantitative", "title": "Firearm Ownership Rate (per 100 people)"},
         "y": {"field": "mortality_rate", "type": "quantitative", "title": "Mortality Rate (per 100,000 people)"},
@@ -33,13 +33,26 @@
         "align": "center",
         "dx": 0,
         "dy": -10,
-        "baseline": "middle"
+        "baseline": "middle",
+        "fontStyle": "bold",
+        "fontSize": 14,
       },
       "encoding": {
         "x": {"field": "ownership_rate", "type": "quantitative"},
         "y": {"field": "mortality_rate", "type": "quantitative"},
         "text": {"field": "country"}
       }
+    },
+    {
+      "mark": {"type":"text", "dx": 200, "dy": -170, "fontSize": 13},
+      "transform": [
+        {"filter": "datum.country == 'United States'"},
+        {
+          "calculate": "'The US is the only country with no; constitutional restrictions on firearms.'",
+          "as": "text_annotation_raw"
+        }, {"calculate": "split(datum.text_annotation_raw,';')", "as": "text_annotation"}
+      ],
+      "encoding": {"text": {"field": "text_annotation"}}
     }
   ],
   "config": {}
