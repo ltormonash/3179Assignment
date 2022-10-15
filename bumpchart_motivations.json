@@ -18,7 +18,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["Fame", "Hate", "Psychosis", "Relationship Issues"],
-        "range": ["red", "676767", "676767", "676767"]
+        "range": ["red", "grey", "grey", "grey"]
       }, "legend": null
     }
   }
@@ -27,5 +27,9 @@
  "encoding":{
    "text": {"condition": {"test": "datum['Date'] != 2020", "value": ""}, "field": "Motivation", "type": "nominal"}
  }}
-]
+],"config": {
+  "view": {
+     "stroke": "transparent"
+  }
+}
 }
