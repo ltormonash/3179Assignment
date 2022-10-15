@@ -103,7 +103,8 @@
                     "dy": -8,
                     "baseline": "middle",
                     "fontStyle": "bold",
-                    "fontSize": 12
+                    "fontSize": 12,
+                    "font": "Lucida Sans"
                   },
                   "encoding": {"text": {"field": "text_annotation"}}
                 }
@@ -133,9 +134,10 @@
         },
         "y": {
           "aggregate": "count",
-          "axis": {"tickCount": 3, "grid": true},
+          "axis": {"tickCount": 3, "grid": true, "labelFont": "Lucida Sans"},
           "title": "No. Incidents"
-        }
+        },
+        "color": {"value": "black"}
       }
     }
   ],
