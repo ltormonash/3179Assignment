@@ -18,15 +18,15 @@
               "axis": {"labelAngle": 270},
               "sort": "-y"
             },
-            "y": {"field": "Crime Index", "type": "quantitative"},
+            "y": {"field": "Crime Index", "type": "quantitative", "axis": {"labelFont": "Lucida Sans"}},
             "color": {"value": "black"}
           }
         },
         {
           "mark": {"type":"bar", "tooltip": true},
           "encoding": {
-            "x": {"field": "Country", "type": "nominal", "sort": "-y"},
-            "y": {"field": "Crime Index", "type": "quantitative"},
+            "x": {"field": "Country", "type": "nominal", "sort": "-y","axis": {"labelFont": "Lucida Sans"}},
+            "y": {"field": "Crime Index", "type": "quantitative","axis": {"labelFont": "Lucida Sans"}},
             "color": {
               "condition": {
                 "test": "datum['Country'] == 'United States'",
@@ -51,7 +51,8 @@
             "dx": -2,
             "dy": -2,
             "x": "width",
-            "text": "World Wide Average"
+            "text": "World Wide Average",
+            "font": "Lucida Sans"
           }
         }
       ]
