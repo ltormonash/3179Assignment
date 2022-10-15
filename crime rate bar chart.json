@@ -11,7 +11,7 @@
       },
       "layer": [
         {
-          "mark": "bar",
+          "mark": {"type":"bar", "tooltip": true},
           "encoding": {
             "x": {
               "field": "Country",
@@ -24,7 +24,7 @@
           }
         },
         {
-          "mark": "bar",
+          "mark": {"type":"bar", "tooltip": true},
           "encoding": {
             "x": {"field": "Country", "type": "nominal", "sort": "-y"},
             "y": {"field": "Crime Index", "type": "quantitative"},
