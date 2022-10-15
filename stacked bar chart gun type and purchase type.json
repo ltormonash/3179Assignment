@@ -34,24 +34,42 @@
       }
     }
   ],
+  "transform": [
+    {"filter": "decade_selection == null || datum.Date == decade_selection"},
+    {"calculate": "datum['Count']*1", "as": "number"}
+  ],
+  "encoding": {
+    "y": {"aggregate": "sum", "field": "number", "title": "Number of uses","axis": {"labelFont": "Lucida Sans"}},
+    "x": {"field": "WeaponType", "title": "Weapon Type","axis": {"labelFont": "Lucida Sans"}},
+    "color": {
+      "field": "PurchaseType",
+      "scale": {"domain": ["Illegal", "Legal"], "range": ["red", "grey"]},
+      "title": "Purchase Type"
+    }
+  },
   "layer": [
+    {"mark": {"type": "bar", "tooltip": true}},
     {
-      "mark": {"type":"bar", "tooltip":true},
+      "mark": {
+        "type": "text",
+        "font": "Lucida Sans",
+        "fontStyle": "normal",
+        "dx": 140,
+        "dy": -150
+      },
       "transform": [
         {
-          "filter": "decade_selection == null || datum.Date == decade_selection"
+          "filter": "decade_selection == null && datum.WeaponType == 'Handgun' && datum.PurchaseType == 'Legal'"
         },
-        {"calculate": "datum['Count']*1", "as": "number"}
+        {
+          "calculate": "'Handguns are the cheapest, ;most accessible, and easiest ;to conceal.'",
+          "as": "text_annotation_raw"
+        }, {"calculate": "split(datum.text_annotation_raw, ';')", "as": "text_annotation"}
       ],
       "encoding": {
-        "y": {"aggregate": "sum", "field": "number", "title": "Number of uses","axis": {"labelFont": "Lucida Sans"}},
-        "x": {"field": "Weapon Type","axis": {"labelFont": "Lucida Sans"}},
-        "color": {
-          "field": "Purchase Type",
-          "scale": {"domain": ["Illegal", "Legal"], "range": ["red", "grey"]}
-        }
+        "text": {"field": "text_annotation"},
+        "color": {"value": "black"}
       }
     }
-  ],
-  "config": {}
+  ]
 }
