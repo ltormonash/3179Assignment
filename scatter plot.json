@@ -40,7 +40,14 @@
       "encoding": {
         "x": {"field": "ownership_rate", "type": "quantitative"},
         "y": {"field": "mortality_rate", "type": "quantitative"},
-        "text": {"field": "country"}
+        "text": {"field": "country"},
+                "color": {
+          "condition": {
+            "test": "datum.country == 'United States'",
+            "value": "red"
+          },
+          "value": "black"
+        }
       }
     },
     {
