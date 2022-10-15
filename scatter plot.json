@@ -8,17 +8,20 @@
   "width": 400,
   "layer": [
     {
-      "mark": "point",
+      "mark": {"type":"point"},
       "encoding": {
-        "x": {"field": "ownership_rate", "type": "quantitative"},
-        "y": {"field": "mortality_rate", "type": "quantitative"},
+        "x": {"field": "ownership_rate", "type": "quantitative", "title": "Firearm Ownership Rate (per 100 people)"},
+        "y": {"field": "mortality_rate", "type": "quantitative", "title": "Mortality Rate (per 100,000 people)"},
         "color": {
           "condition": {
             "test": "datum.country == 'United States'",
             "value": "red"
           },
           "value": "grey"
-        }
+        },
+        "tooltip": [{"field": "country", "type": "nominal", "title": "Country"},
+        {"field": "ownership_rate", "type": "quantitative", "title": "Ownership Rate"},
+        {"field": "mortality_rate", "type": "quantitative", "title": "Mortality Rate"}]
       }
     },
     {
