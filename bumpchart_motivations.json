@@ -9,7 +9,7 @@
     "x": {"field": "Date", "type": "ordinal"},
     "y": {"field": "Rank", "type": "ordinal"}},
   "layer": [{
-  "mark": {"type": "line", "orient": "vertical"},
+  "mark": {"type": "line", "orient": "vertical", "tooltip": true},
   "encoding": {
     "x": {"field": "Date", "type": "ordinal"},
     "y": {"field": "Rank", "type": "ordinal"},
@@ -23,7 +23,7 @@
     }
   }
 },
- {"mark": {"type": "text", "align": "left", "dx": 5},
+ {"mark": {"type": "text", "align": "left", "dx": 5, "tooltip": true},
  "encoding":{
    "text": {"condition": {"test": "datum['Date'] != 2020", "value": ""}, "field": "Motivation", "type": "nominal"}
  }}
