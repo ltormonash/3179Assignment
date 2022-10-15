@@ -23,7 +23,7 @@
   "layer": [
     {"mark": {"type": "arc", "outerRadius": 150, "stroke": "#ffffff"}},
     {
-      "mark": {"type": "text", "radius": 175, "fill": "#000000"},
+      "mark": {"type": "text", "radius": 175, "fill": "#000000", "font": "Lucida Sans"},
       "encoding": {"text": {"field": "Condition", "type": "nominal"}}
     }
   ],
