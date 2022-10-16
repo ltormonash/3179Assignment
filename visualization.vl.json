@@ -25,18 +25,18 @@
                 "fields": ["HFR"]
               }
             },
-            {"calculate": "datum.HFR", "as": "Firearm Ownership Percentage"}
+            {"calculate": "datum.HFR", "as": "Firearm Ownership Rate"}
           ],
           "mark": {"type": "geoshape", "stroke": "#757575", "strokeWidth": 1},
           "encoding": {
             "color": {
-              "field": "Firearm Ownership Percentage",
+              "field": "Firearm Ownership Rate",
               "type": "quantitative",
               "scale": {"domainMax": 0.7, "range": ["white", "#A9A9A9"]}
             },
             "tooltip": [
               {"field": "properties.name", "type": "nominal", "title": "State"},
-              {"field": "Firearm Ownership Percentage", "type": "quantitative"}
+              {"field": "Firearm Ownership Rate", "type": "quantitative"}
             ]
           }
         },
